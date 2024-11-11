@@ -61,6 +61,13 @@ class LoanController extends Controller
         return redirect()->route('loans.index')->with('success', 'Loan created successfully.');
     }
 
+    public function edit(Loan $loan)
+    {
+        $users = User::where('role', '!=', 'admin')->get() ?? [];
+        $books = Book::where('available_copies', '>', 0)->get();
+        return view('loans.edit', compact('loan', 'users', 'books'));
+    }
+
     // Devuelve el libro y actualiza el estado del préstamo
     public function returnBook(Loan $loan)
     {
