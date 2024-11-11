@@ -2,63 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classification;
 use Illuminate\Http\Request;
 
 class ClassificationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Muestra la lista de clasificaciones
     public function index()
     {
-        //
+        $classifications = Classification::paginate(10);
+        return view('classifications.index', compact('classifications'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function show(Classification $classification)
+    {
+        return view('classifications.show', compact('classification'));
+    }
+
+    // Muestra el formulario para crear una nueva clasificación
     public function create()
     {
-        //
+        return view('classifications.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Guarda una nueva clasificación en la base de datos
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'description' => 'nullable|string',
+        ]);
+
+        Classification::create($request->all());
+
+        return redirect()->route('classifications.index')->with('success', 'Classification created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Muestra el formulario para editar una clasificación
+    public function edit(Classification $classification)
     {
-        //
+        return view('classifications.edit', compact('classification'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Actualiza la clasificación en la base de datos
+    public function update(Request $request, Classification $classification)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'description' => 'nullable|string',
+        ]);
+
+        $classification->update($request->all());
+
+        return redirect()->route('classifications.index')->with('success', 'Classification updated successfully.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Elimina una clasificación
+    public function destroy(Classification $classification)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $classification->delete();
+        return redirect()->route('classifications.index')->with('success', 'Classification deleted successfully.');
     }
 }

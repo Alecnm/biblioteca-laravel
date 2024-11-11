@@ -15,6 +15,26 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    
+                    <!-- Users Navigation Link -->
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
+                    
+                    <!-- Classifications Navigation Link -->
+                    <x-nav-link :href="route('classifications.index')" :active="request()->routeIs('classifications.*')">
+                        {{ __('Clasificaciones') }}
+                    </x-nav-link>
+                    
+                    <!-- Books Navigation Link -->
+                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.*')">
+                        {{ __('Libros') }}
+                    </x-nav-link>
+                    
+                    <!-- Loans Navigation Link -->
+                    <x-nav-link :href="route('loans.index')" :active="request()->routeIs('loans.*')">
+                        {{ __('Préstamos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +89,26 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            
+            <!-- Responsive Users Link -->
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                {{ __('Usuarios') }}
+            </x-responsive-nav-link>
+            
+            <!-- Responsive Classifications Link -->
+            <x-responsive-nav-link :href="route('classifications.index')" :active="request()->routeIs('classifications.*')">
+                {{ __('Clasificaciones') }}
+            </x-responsive-nav-link>
+            
+            <!-- Responsive Books Link -->
+            <x-responsive-nav-link :href="route('books.index')" :active="request()->routeIs('books.*')">
+                {{ __('Libros') }}
+            </x-responsive-nav-link>
+            
+            <!-- Responsive Loans Link -->
+            <x-responsive-nav-link :href="route('loans.index')" :active="request()->routeIs('loans.*')">
+                {{ __('Préstamos') }}
             </x-responsive-nav-link>
         </div>
 
