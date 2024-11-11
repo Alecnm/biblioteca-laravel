@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
+  <title>Biblioteca</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -15,7 +15,7 @@
       <div class="container hero">
         <div class="container-logo">
           <i class="fa-solid fa-book"></i>
-          <h1 class="logo"><a href="/">coffee-book</a></h1>
+          <h1 class="logo"><a href="/">Biblioteca</a></h1>
         </div>
         <div class="container-user">
           <i class="fa-solid fa-user"></i>
@@ -183,7 +183,7 @@
         </div>
       </div>
       <div class="copyright">
-        <p>Desarrollado por Annie developer fullStack Junior &copy; 2024</p>
+        <p>Desarrollado por devs &copy; 2024</p>
         <img src="{{ asset('img/payment.png') }}" alt="Pagos">
       </div>
     </div>
