@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -18,7 +18,7 @@
           <h1 class="logo"><a href="/">Biblioteca</a></h1>
         </div>
         <div class="container-user">
-          <i class="fa-solid fa-user"></i>
+          <a class="btn btn-primary" href="{{ route('register') }}" role="button">Register</a>
           <a class="btn btn-primary" href="{{ route('login') }}" role="button">Login</a>
         </div>
       </div>
@@ -42,17 +42,19 @@
   </header>
 
   <main class="main-content">
+    <br>
+    <br>
     <!-- Carrusel -->
     <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
+      <div class="carousel-inner text-center">
         <div class="carousel-item active">
-          <img src="{{ asset('img/lib1.jpg') }}" class="d-block w-100" alt="Libro 1">
+          <img src="{{ asset('images/ha.jpg') }}" class="object-cover" alt="Libro 1">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('img/lib2.jpg') }}" class="d-block w-100" alt="Libro 2">
+          <img src="{{ asset('images/lu.jpeg') }}" class="object-cover" alt="Libro 2">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('img/lib3.jpg') }}" class="d-block w-100" alt="Libro 3">
+          <img src="{{ asset('images/chs.jpeg') }}" class="object-cover" alt="Libro 3">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -68,7 +70,7 @@
     <!-- Características -->
     <section class="container container-features">
       <div class="card-feature">
-        <i class="fa-solid fa-plane-up"></i>
+        <i class="fa-solid fa-plane"></i>
         <div class="feature-content">
           <span>Envío gratuito</span>
           <p>En pedido superior a $150</p>
@@ -124,7 +126,7 @@
         @for ($i = 1; $i <= 3; $i++)
           <div class="col-md-4">
             <video controls class="img-fluid">
-              <source src="{{ asset('video/video' . $i . '.mp4') }}" type="video/mp4">
+              <source src="{{ asset('videos/video' . $i . '.mp4') }}" type="video/mp4">
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>
@@ -184,7 +186,7 @@
       </div>
       <div class="copyright">
         <p>Desarrollado por devs &copy; 2024</p>
-        <img src="{{ asset('img/payment.png') }}" alt="Pagos">
+        <img src="{{ asset('images/payment.png') }}" alt="Pagos">
       </div>
     </div>
   </footer>

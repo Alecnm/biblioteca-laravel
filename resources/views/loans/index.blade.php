@@ -5,7 +5,7 @@
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('Listado de Préstamos') }}
             </h2>
-            <a href="{{ route('loans.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="{{ route('loans.create') }}" class="btn btn-primary">
                 {{ __('Registrar Préstamo') }}
             </a>
         </div>
